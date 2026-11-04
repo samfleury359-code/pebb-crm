@@ -23129,20 +23129,20 @@ __metadata:
   linkType: hard
 
 "@tiptap/extension-bold@npm:^2.11.5":
-  version: 2.12.0
-  resolution: "@tiptap/extension-bold@npm:2.12.0"
+  version: 2.27.3
+  resolution: "@tiptap/extension-bold@npm:2.27.3"
   peerDependencies:
     "@tiptap/core": ^2.7.0
-  checksum: 10c0/3bf20002e8f31044d6d1ed33876ebfd191e8e6e8e244c03ab17c5d52223441603697dbbda03a512b8ffc7826084bf80a7bc049333d45bc3cfb005cdc413fd762
+  checksum: 10c0/8759ce5f6587e2c0455636292549f01e7f37ced6fda85e0e3f3458a39c65ac110cc764401a3d72c377059a5b1220c1b0cd8de40241a8983d3b74c36a2fb8f863
   languageName: node
   linkType: hard
 
 "@tiptap/extension-bold@npm:^3.4.2":
-  version: 3.4.2
-  resolution: "@tiptap/extension-bold@npm:3.4.2"
+  version: 3.32.2
+  resolution: "@tiptap/extension-bold@npm:3.32.2"
   peerDependencies:
-    "@tiptap/core": ^3.4.2
-  checksum: 10c0/f37a5701432f47c09e979c9944edccfe5fe0009b51666bd0719096e8744465bf3c38c5a405510af57aa275208bde408f6c1cd0d685a265d1659cc89ddca47cb4
+    "@tiptap/core": 3.32.2
+  checksum: 10c0/945f06514e304e152f85d8ec231685196d510d81a3c4ffdda75169b81fb69c8c1cfeed2c30204d92be9164debd25ce1cd13811566cac4713699d25d207a8dfc7
   languageName: node
   linkType: hard
 
