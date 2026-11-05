@@ -4,6 +4,12 @@
 
 FROM node:26.12.1-alpine3.23@sha256:bc2b334006f15c7167bbeb2f08f28c2df883f7594a0470e04454ebe7560cfe68 AS node-base
 
+ENV THREADS_WORKER_INIT_TIMEOUT=300000
+ENV UV_THREADPOOL_SIZE=2
+ENV NX_DAEMON=false
+ENV NX_PARALLEL=1
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
 # Node 26 images no longer bundle Yarn; run the release pinned in .yarnrc.yml.
 RUN printf '%s\n' '#!/bin/sh' 'exec node "/app/$(sed -n "s/^yarnPath: //p" /app/.yarnrc.yml)" "$@"' \
       > /usr/local/bin/yarn && \

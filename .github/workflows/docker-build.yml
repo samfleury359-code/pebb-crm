@@ -4,10 +4,13 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Runner ARM64 natif de GitHub : compile en ARM64 sans émulateur QEMU !
+    # (Si votre dépôt GitHub est Privé sur un compte gratuit, remplacez par : ubuntu-latest)
+    runs-on: ubuntu-24.04-arm
     permissions:
       contents: read
       packages: write
@@ -16,11 +19,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+        with:
+          buildkitd-config-inline: |
+            [worker.oci]
+              max-parallelism = 2
 
       - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
